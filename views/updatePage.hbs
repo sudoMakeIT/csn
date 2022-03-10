@@ -1,0 +1,201 @@
+<div class="container" style="background-color: #d0d0d0">
+    {{#if error}}
+        <div class=""alert alert-danger>{{error}}</div>
+    {{/if}}
+
+
+    <div class="btnDiv">
+        <a href="/admin/logout">
+            <button>
+                Logout
+            </button>
+        </a>
+    </div>
+
+    <section id="aboutEdit">
+        <div class="container">
+            <div class="area-heading">
+                <h3 class="line">Sobre</h3>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="about-content" style="background-color: #fff">
+                        {{#each others}}
+
+                            <form class="login-form" method="POST" action="/admin/updateOthers">
+                                <input type="hidden" name="id" value="{{_id}}"/>
+                                <br/>
+                                <label for="title">Título</label>
+                                <input type="text" name="title" id="title" value="{{title}}" required/>
+                                <br/>
+                                <label for="sec">Título Secundário</label>
+                                <input type="text" name="text" id="sec" value="{{text}}" required/>
+                                <br/>
+                                <button type="submit">Guardar</button>
+                            </form>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service" class="service-area area-padding" style="background-color: transparent">
+        <div class="container">
+            <div class="area-heading">
+                <h3 class="line">Serviços Prestados</h3>
+            </div>
+            <div class="row">
+                <!-- Single service -->
+                {{#each services}}
+                    <div class="col-md-6 col-xl-3">
+                        <div class="single-service">
+                            <div class="service-icon">
+                                <img src="{{path}}" alt="">
+                            </div>
+                            <div class="service-content">
+                                <form class="login-form" method="POST" action="/admin/updateServices">
+                                    <input type="hidden" name="id" value="{{_id}}"/>
+                                    <input type="text" name="title" placeholder="Titulo" value="{{title}}" required/>
+                                    <input type="text" name="desc" placeholder="Descrição" value="{{desc}}" />
+                                    <button type="submit">Guardar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio_area area-padding" id="portfolio">
+        <div class="container">
+            <div class="area-heading">
+                <h3 class="line">Projetos Recentes</h3>
+            </div>
+
+            <div class="imgTable">
+                {{#each images}}
+                    <div class="card col-lg-4 col-md-6" >
+                        <div class="card-body">
+                            <img src="/img/project/{{path}}" style="height: 100px;width: 100px;"/>
+                            <div style="float: right" class="h5s">
+                                <h5>Nome: {{nome}}</h5>
+                                <h5>Titulo: {{lg1}}</h5>
+                                <h5>Legenda: {{lg2}}</h5>
+                            </div>
+                            <div style="margin-top: 10px;width: 100%;height: 100%">
+                                <form class="login-form" method="POST" style="width: 49%;float: left" action="/admin/deleteImage">
+                                    <input type="hidden" name="id" value="{{_id}}"/>
+                                    <button type="submit" style="width: 100%;"><i class="far fa-trash-alt"></i></button>
+                                </form>
+                                <div class="tableEdit">
+                                    <button type="button"  onclick="imgEdit()"><i class="fas fa-edit"></i></button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div id="editImg" class="overlay">
+                            <div class="popup">
+                                <button type="button" class="close" onclick="imgEdit()"><i class="fas fa-times"></i></button>
+                                <img src="/img/project/{{path}}" style="height: 100px;width: 100px;"/>
+
+                                <form class="login-form" method="POST" action="/admin/editImage">
+                                    <input type="hidden" name="id" value="{{_id}}"/>
+                                    <input type="text" name="name" value="{{nome}}" required/>
+                                    <input type="text" name="lgTitle" value="{{lg1}}" required/>
+                                    <input type="text" name="lg"  value="{{lg2}}" required/>
+                                    <button type="submit" onclick="imgEdit()" style="width: 97%; margin-left: 3%;">Editar</button>
+                                    <form class="login-form" method="POST" action="/admin/deleteImage">
+                                        <input type="hidden" name="id" value="{{_id}}"/>
+                                        <button type="submit" onclick="imgEdit()" style="width: 97%; margin-left: 3%;    margin-top: 1%;
+    padding: 13px;"><i class="far fa-trash-alt"></i></button>
+                                    </form>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+
+            <div class="imgNew">
+                <h3>Nova imagem</h3>
+                <form class="login-form" method="POST" id="newImg" enctype="multipart/form-data" action="/admin/addImages">
+                    <input type="text" name="name" placeholder="Nome do projeto" required/>
+                    <input type="text" name="lgTitle" placeholder="Legenda título" required/>
+                    <input type="text" name="lg" placeholder="Legenda" required/>
+                    <input type="file" name="file">
+                    <button type="submit"  data-inline="true" style="float: right;margin-right: 10px;" name="upload">Adicionar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="affEdit">
+        <div class="container">
+            <div class="area-heading">
+                <h3 class="line">Afiliados</h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="about-content" style="background-color: #fff">
+                        {{#each aff}}
+                            <div style="text-align: center">
+                                <img src="/img/{{img}}" style="height: 100px;width: 100px;"/>
+                            </div>
+                            <form class="login-form" method="POST" action="/admin/updateAff">
+                                <input type="hidden" name="id" value="{{_id}}"/>
+                                <br/>
+                                <label for="title">Name</label>
+                                <input type="text" name="name" id="title" value="{{name}}" required/>
+                                <br/>
+                                <label for="sec">Texto</label>
+                                <input type="text" name="text" id="sec" value="{{text}}" required/>
+
+                                <label for="sec1">Link</label>
+                                <input type="text" name="link" id="sec1" value="{{link}}" required/>
+                                <br/>
+                                <button type="submit">Guardar</button>
+                            </form>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contactArea area-padding" id="footer" style="background-color: transparent">
+        <div class="container">
+            <div class="area-heading">
+                <h3 class="line">Contactos</h3>
+
+            </div>
+            <div class="row justify-content-center">
+                {{#each contacts}}
+                    <div class="col-lg-4 col-md-6 col-sm-7">
+                        <div class="contact-box-edit text-center mt-30">
+                            <div class="contact-icon">
+                                <i class="{{icon}} fa-3x"></i>
+                            </div>
+                            <div class="contact-content">
+
+                                <h6 class="contact-title">{{toWhat}}</h6>
+                                <form class="login-form" method="POST" action="/admin/updateContacts">
+                                    <input type="hidden" name="id" value="{{_id}}"/>
+                                    <input type="hidden" name="toWhat" value="{{toWhat}}"/>
+                                    <input type="text" name="text1" placeholder="Valor 1" value="{{text1}}" required/>
+                                    <input type="text" name="text2" placeholder="Valor 2" value="{{text2}}"/>
+                                    <br/>
+                                    <button type="submit">Guardar</button>
+                                </form>
+
+                            </div> <!-- contact box -->
+                        </div>
+                    </div>
+                {{/each}}
+            </div> <!-- row -->
+        </div>
+    </section>
+</div>

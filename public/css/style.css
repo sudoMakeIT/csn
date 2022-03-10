@@ -1,0 +1,413 @@
+
+@import url("https://fonts.googleapis.com/css?family=Heebo:400,500,700|Roboto:300,400,500,700");
+
+.list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.row.m0 {
+    margin: 0px;
+}
+
+body {
+    line-height: 24px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: #888888;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Heebo", sans-serif;
+    font-weight: bold;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.p_120 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.pad_top {
+    padding-top: 120px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+.container {
+    padding-top: 1px;
+}
+@media (min-width: 1300px) {
+    .container {
+        max-width: 1250px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* Menu */
+.header_area {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(233,233,233,1);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(233,233,233,1);
+    box-shadow: 0px 4px 5px 0px rgba(233,233,233,1);
+}
+
+
+
+/* NAV-DROID */
+.topnav {
+    padding: 10px;
+    margin: 5px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    padding: 10px;
+    margin: 5px;
+    float: left;
+    font-weight: 450;
+    color: #202e31;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    color: #e22104 !important;
+    text-decoration: none;
+    border-bottom: 1px solid #e22104;
+}
+
+.topnav .icon {
+    display: none;
+    font-size: x-large;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 800px) {
+    .topnav {
+        position: absolute;
+        z-index: 998;
+        float: right;
+        right: 0;
+        top: 0;
+    }
+    .topnav a {display: none;}
+    .topnav a.icon {
+        display: block;
+        color: gray;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .topnav.responsive {
+        position: absolute;
+        width: 100%;
+    }
+    .topnav.responsive a.icon {
+        position: relative;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+
+
+/* HOME */
+
+.about-area {
+    padding-bottom: 20px;
+    margin-top: 10%;
+}
+
+.about-area .about-content {
+    padding: 20px 110px;
+    min-height: 250px;
+}
+@media (min-width: 1199px) and (max-width: 1199px) {
+    .about-area .about-content {
+        padding-top: 30px;
+        padding-left: 40px; } }
+@media (max-width: 991px) {
+    .about-area .about-content {
+        margin-top: 0;
+        padding-left: 0; }
+    .about-area .about-content h4 br {
+        display: none; }
+    .about-area .about-content p br {
+        display: none; } }
+.about-area .about-content h4 {
+    font-size: 30px;
+    color: #202e31;
+    font-family: "Heebo", sans-serif;
+    margin-bottom: 22px;
+    line-height: 40px;
+    text-align: center;
+}
+.about-area .about-content p {
+    font-size: 14pt;
+    text-align: justify;
+    font-family: "Roboto", sans-serif;
+    color: #4d4d4d;
+    margin-bottom: 40px;
+    line-height: 26px;
+}
+
+/* Services */
+
+.service-area {
+    background: #e9e9e9;
+    padding-bottom: 20px;
+}
+.service-area .single-service {
+    border: 1px solid transparent;
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    transition: all 300ms linear 0s; }
+.service-area .single-service:hover {
+    border: 1px solid #e22104;
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23);
+    -moz-box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23);
+    box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23); }
+.service-area .single-service .service-icon {
+    width: 170px;
+    height: 95px;
+    text-align: center;
+    margin: 0 auto 28px;
+    position: relative;
+    z-index: 1; }
+
+.service-area .single-service .service-content h5 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #202e31;
+    margin-bottom: 18px; }
+.service-area .single-service .service-content p {
+    line-height: 27px; }
+
+.service-page.service-area {
+    background: #fff; }
+.service-page.service-area .single-service {
+    background: #f6f6f6; }
+
+.area-heading {
+    margin-bottom: 50px;
+    text-align: center;
+    margin-top: 50px; }
+.area-heading h3 {
+    font-size: 30px;
+    color: #202e31;
+    position: relative; }
+.area-heading p {
+    font-size: 14px;
+    color: #888888; }
+.area-heading .line:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background: #e22104;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -16px; }
+.area-heading .line:before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    background: #e22104;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -14px; }
+
+
+/* Projects */
+
+.single_portfolio {
+    position: relative;
+    margin-bottom: 30px; }
+@media (max-width: 767px) {
+    .single_portfolio {
+        margin-bottom: 35px; } }
+.single_portfolio .short_info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms linear 0s;
+    background: #fff;
+    width: 370px;
+    padding: 20px 37px;
+}
+.single_portfolio .short_info h4 {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px; }
+.single_portfolio .short_info h4 a {
+    color: #202e31; }
+.single_portfolio .short_info p {
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    color: #e22104; }
+.single_portfolio:hover .short_info {
+    opacity: 1;
+    visibility: visible; }
+
+.portfolio_details_inner .row {
+    margin-bottom: 35px; }
+@media (max-width: 480px) {
+    .portfolio_details_inner .row {
+        margin-bottom: 30px; } }
+.portfolio_details_inner p {
+    margin-bottom: 30px;
+    font-size: 14px; }
+.portfolio_details_inner p:last-child {
+    margin-bottom: 0px; }
+.portfolio_details_inner .portfolio_right_text {
+    padding: 30px;
+    background: #f8faff;
+    margin-top: 10px; }
+.portfolio_details_inner .portfolio_right_text h4 {
+    font-size: 20px;
+    text-transform: capitalize !important;
+    margin-bottom: 10px; }
+.portfolio_details_inner .portfolio_right_text p {
+    margin-bottom: 25px;
+    font-size: 14px; }
+.portfolio_details_inner .portfolio_right_text .list li {
+    margin-bottom: 7px;
+    font-weight: normal;
+    font-size: 14px; }
+.portfolio_details_inner .portfolio_right_text .list li span {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    width: 97px;
+    display: inline-block; }
+.portfolio_details_inner .portfolio_right_text .list li:last-child {
+    margin-bottom: 0px; }
+.portfolio_details_inner .portfolio_right_text .list li i {
+    color: #f1cd09; }
+
+/*
+Afiliados
+*/
+.aff-area {
+    background: #e9e9e9;
+    padding-bottom: 20px;
+}
+
+
+
+.aff-area h5 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #202e31;
+    margin-bottom: 18px; }
+
+.aff-area p {
+    line-height: 27px; }
+
+/* Contacts */
+.contactArea {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.aff_img {
+    text-align: center;
+}
+.aff_img img {
+    max-height: 240px;
+    max-width: 240px;
+}
+.contact-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 30px 35px;
+    height: 220px !important;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s; }
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .contact-box {
+        padding: 30px 25px; } }
+@media (max-width: 767px) {
+    .contact-box {
+        padding: 30px 25px; } }
+.contact-box .contact-icon i {
+    font-size: 48px;
+    color: #e22104
+}
+.contact-box .contact-content {
+    margin-top: 15px; }
+.contact-box .contact-content .contact-title {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    color: #202e31}
+.contact-box:hover {
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23);
+    -moz-box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23);
+    box-shadow: 0px 0px 21px 0px rgba(152, 152, 152, 0.23);
+    border: 1px solid #e22104;}
+
+
+
+
+/*
+New About Area
+*/
+
+
+/*
+portfolio
+*/
+
+.proj-form button{
+    width: 100%;
+    height: 100%;
+}
+
+.slideshowscale {
+    z-index: 999;
+}
+
+.slideshowscale:hover {
+    position: absolute;
+    transform: scale(1.5);
+    transition: 1s;
+}

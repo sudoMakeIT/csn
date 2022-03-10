@@ -1,0 +1,83 @@
+<!--================Header Menu Area =================-->
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="/"><img src="/img/about1r.png" alt=""></a>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="topnav" id="myTopnav">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <a href="/" class="active" onclick="myFunction()">Home</a>
+                    <a href="/about" onclick="myFunction()">Sobre</a>
+                    <a href="/#service" onclick="myFunction()">Serviços</a>
+                    <a href="/projetos" onclick="myFunction()">Projetos</a>
+                    <a href="#aff" onclick="myFunction()">Afilados</a>
+                    <a href="/#footer" onclick="myFunction()">Contactos</a>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!--================body =================-->
+<section id="about" class="about-area area-padding">
+    <div class="container">
+        <div class="area-heading">
+            <h3 class="line">Sobre Nós</h3>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                {{#each others}}
+                    {{#unless welcome}}
+                        <div class="about-content">
+                            <h4>{{title}}</h4>
+                            <p>
+                                {{text}}
+                            </p>
+
+                        </div>
+                    {{/unless}}
+                {{/each}}
+            </div>
+
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img src="/img/about1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================Contacts Area =================-->
+<section class="contactArea area-padding" id="footer">
+    <div class="container">
+        <div class="area-heading">
+            <h3 class="line">Contactos</h3>
+
+        </div>
+        <div class="row justify-content-center">
+            {{#each contacts}}
+                <div class="col-lg-4 col-md-6 col-sm-7">
+                    <div class="contact-box text-center mt-30">
+                        <div class="contact-icon">
+                            <i class="{{icon}} fa-3x"></i>
+                        </div>
+                        <div class="contact-content">
+
+                            <h5 class="contact-title">{{toWhat}}</h5>
+                            <p>{{text1}}</p>
+                            <p>{{text2}}</p>
+
+                        </div> <!-- contact box -->
+                    </div>
+                </div>
+            {{/each}}
+        </div> <!-- row -->
+    </div>
+</section>

@@ -1,0 +1,51 @@
+<!--================Header Menu Area =================-->
+<header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="/"><img src="/img/about1r.png" alt=""></a>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="topnav" id="myTopnav">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <a href="/" class="active" onclick="myFunction()">Home</a>
+                    <a href="/about" onclick="myFunction()">Sobre</a>
+                    <a href="/#service" onclick="myFunction()">Serviços</a>
+                    <a href="/projetos" onclick="myFunction()">Projetos</a>
+                    <a href="#aff" onclick="myFunction()">Afilados</a>
+                    <a href="/#footer" onclick="myFunction()">Contactos</a>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!--================body =================-->
+<section class="portfolio_area area-padding" id="portfolio" style="margin-top: 10%;">
+    <div class="container">
+        <div class="area-heading">
+            <h3 class="line">{{pname}}</h3>
+        </div>
+
+        <div class="row portfolio-grid">
+            {{#each images}}
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_portfolio">
+                        <img class="img-fluid  slideshowscale w-100" src="/img/project/{{path}}" alt="" style="max-height: 420px !important;">
+                        <div class="short_info">
+                            <p>{{lg1}}</p>
+                            <h4>{{lg2}}</h4>
+                        </div>
+                    </div>
+                </div>
+
+            {{/each}}
+        </div>
+    </div>
+</section>
+
