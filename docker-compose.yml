@@ -1,0 +1,32 @@
+version: "3.3"
+
+services:
+  mongo:
+    image: mongo:5.0.8-focal
+    container_name: csnDatabase
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - ./database:/data/db
+    command: --quiet
+
+  webserver:
+    build: ./webserver
+    container_name: csnWebserver
+    depends_on:
+      - mongo
+    ports:
+      - "3000:3000"
+    environment:
+      DB_URL: mongodb://mongo:27017/csnDB
+      DB_HOST: mongo
+      DB_PORT: 27017
+      DB_DATABASE: cnsDb
+      HOST: 0.0.0.0
+      PORT: 3000
+    volumes:
+      - ./webserver:/app
+
+volumes:
+  mongo:
